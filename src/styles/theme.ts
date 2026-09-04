@@ -1,3 +1,5 @@
+// Estilos extraidos con IA de Examio (Tailwind css 4)
+
 export const colors = {
   primary: {
     50: '#eef2ff',
