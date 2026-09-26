@@ -13,7 +13,7 @@ type AutenticacionStore = {
   cerrarSesion: () => void;
 };
 
-export const useAuthStore = create<AutenticacionStore>((set) => ({
+export const useAutenticacionStore = create<AutenticacionStore>((set) => ({
   usuario: null,
 
   iniciarSesion: (usuario) => {

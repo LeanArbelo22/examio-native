@@ -11,11 +11,6 @@ import {
 export default function Inicio() {
   return (
     <View style={styles.container}>
-      <Image
-        source={require("../../assets/images/logo.png")}
-        resizeMode="contain"
-        style={styles.logo}
-      />
       <Text style={styles.titulo}>Proximas actividades</Text>
       <ScrollView>
         {evaluaciones.map((evaluacion) => (
@@ -36,12 +31,6 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: semanticColors.screenBackground,
-  },
-  logo: {
-    width: 200,
-    height: 100,
-    alignSelf: "center",
-    //resizeMode: "contain", -- sale advertencia deprecado, se agrega como prop de image
   },
   titulo: {
     fontSize: fontSize.title,
