@@ -46,7 +46,7 @@ export default function FormularioLogin() {
     <View style={styles.formulario}>
       <Text style={styles.titulo}>Iniciar sesión</Text>
 
-      <Text style={styles.descripcion}>Ingresá con tu cuenta de alumno.</Text>
+      <Text style={styles.descripcion}>Ingresa con tu cuenta de alumno</Text>
 
       <CampoFormulario
         label="Correo electrónico"
@@ -60,7 +60,7 @@ export default function FormularioLogin() {
         label="Contraseña"
         value={password}
         onChangeText={setPassword}
-        placeholder="Ingresá tu contraseña"
+        placeholder="Ingresa tu contraseña"
         secureTextEntry
       />
 
