@@ -6,7 +6,7 @@ export const credencialesMock = {
 
 export const usuarioMock = {
   id: 1,
-  nombre: "Alumno Examio",
+  nombre: "Leandro Arbelo",
   email: "alumno@examio.com",
   rol: "alumno",
 };
