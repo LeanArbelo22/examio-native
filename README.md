@@ -34,9 +34,9 @@ Estas credenciales son solamente datos simulados para esta etapa del proyecto.
 
 Inicio y cierre de sesión: Implementado (datos mock)
 Agenda de proximas evaluaciones: Implementado (datos mock)
-Recordatorios de evaluaciones: Pendiente 
-Historial de notas y devoluciones: Pendiente 
-Resumen del rendimiento academico: Pendiente 
+Recordatorios de evaluaciones: Pendiente
+Historial de notas y devoluciones: Pendiente
+Resumen del rendimiento academico: Pendiente
 Notificaciones academicas: Pendiente
 
 ## Contenidos aplicados
