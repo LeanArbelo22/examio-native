@@ -25,6 +25,13 @@ export default function Historial() {
                 <TouchableOpacity
                     style={styles.botonVolver}
                     activeOpacity={0.7}
+                    onPress={() => router.replace("/rendimiento")}
+                >
+                    <Text style={styles.textoVolver}>Ver rendimiento académico</Text>
+                </TouchableOpacity>
+                <TouchableOpacity
+                    style={styles.botonVolver}
+                    activeOpacity={0.7}
                     onPress={() => router.replace("/inicio")}
                 >
                     <Text style={styles.textoVolver}>Volver al inicio</Text>

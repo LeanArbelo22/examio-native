@@ -40,7 +40,14 @@ export default function Inicio() {
       <Link href="/historial" asChild>
         <TouchableOpacity style={styles.tarjeta} activeOpacity={0.7}>
           <Text style={styles.saludo}>Historial de notas</Text>
-          <Text>Consultá tus notas y devoluciones</Text>
+          <Text>Consultá tu promedio y resumen de notas</Text>
+        </TouchableOpacity>
+      </Link>
+
+      <Link href="/rendimiento" asChild>
+        <TouchableOpacity style={styles.tarjeta} activeOpacity={0.7}>
+          <Text style={styles.saludo}>Rendimiento académico</Text>
+          <Text>Consultá tu promedio y porcentaje de aprobación</Text>
         </TouchableOpacity>
       </Link>
     </View>

@@ -33,7 +33,7 @@ Agenda de próximas evaluaciones (datos mock. listo)
 Compartir los datos de una evaluación (listo)
 Historial de notas y devoluciones (datos mock, listo)
 Recordatorios de evaluaciones mediante notificaciones locales.
-Resumen del rendimiento académico: promedio y porcentaje de aprobación.
+Resumen del rendimiento académico (listo)
 
 ## Contenidos aplicados
 
