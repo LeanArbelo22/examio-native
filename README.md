@@ -15,13 +15,9 @@ La aplicación busca complementar el sistema Examio y permitir que los alumnos c
 
 ## Estado actual
 
-Actualmente la aplicación cuenta con un inicio de sesión simulado y una pantalla de próximas actividades.
-
-El formulario valida campos vacíos y compara los datos ingresados con credenciales mock. Cuando el ingreso es correcto, la información del alumno se guarda en un estado global manejado con Zustand.
-
-La pantalla de inicio muestra al alumno autenticado, permite cerrar la sesión y presenta evaluaciones creadas con datos estáticos.
-
-Todavía no existe conexión con la API de Examio y la sesión no se conserva al cerrar o recargar completamente la aplicación.
+La pantalla de inicio permite acceder a la agenda de próximas evaluaciones, que se muestra en una pantalla independiente.
+El layout compartido muestra el nombre y el rol de lalumno y permite cerrar la sesión desde las pantallas internas.
+Cada evaluación permite compartir por texto la materia, el título, la fecha y el horario mediante el menú del celular.
 
 ## Credenciales de prueba
 
@@ -32,17 +28,12 @@ Estas credenciales son solamente datos simulados para esta etapa del proyecto.
 
 ## Features previstas
 
-Inicio y cierre de sesión: Implementado (datos mock).
-
-Agenda de proximas evaluaciones: Implementado (datos mock).
-
-Recordatorios de evaluaciones: Pendiente.
-
-Historial de notas y devoluciones: Pendiente.
-
-Resumen del rendimiento academico: Pendiente.
-
-Notificaciones academicas: Pendiente.
+Inicio y cierre de sesión con un alumno de prueba (datos mock, listo.)
+Agenda de próximas evaluaciones (datos mock. listo)
+Compartir los datos de una evaluación (listo)
+Historial de notas y devoluciones (datos mock)
+Recordatorios de evaluaciones mediante notificaciones locales.
+Resumen del rendimiento académico: promedio y porcentaje de aprobación.
 
 ## Contenidos aplicados
 
@@ -62,6 +53,8 @@ Notificaciones academicas: Pendiente.
 - Navegación con Expo Router
 - Renderizado de evaluaciones a partir de un array
 - Validación de formularios
+-Compartir texto con Share.share
+-Manejo de errores con try/catch y Alert
 
 ## Tecnologías utilizadas
 

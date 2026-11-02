@@ -5,7 +5,7 @@ import {
   semanticColors,
   spacing,
 } from "@/styles/theme";
-import { StyleSheet, Text, View } from "react-native";
+import { Alert, Share, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
 
 export default function EvaluacionCard({
   materia,
@@ -18,12 +18,28 @@ export default function EvaluacionCard({
   fecha: string;
   horario: string;
 }) {
+
+  async function compartirEvaluacion() {
+    try {
+      await Share.share({
+        message: `${materia}\n${titulo}\nFecha: ${fecha}\nHorario: ${horario}`,
+      });
+    } catch {
+      Alert.alert("No se pudo compartir", "Intente nuevamente");
+    }
+  }
   return (
     <View style={styles.card}>
       <Text style={styles.materia}>{materia}</Text>
       <Text style={styles.titulo}>{titulo}</Text>
       <Text style={styles.detalle}>Fecha: {fecha}</Text>
       <Text style={styles.detalle}>Horario: {horario}</Text>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={compartirEvaluacion}
+      >
+        <Text style={styles.materia}>Compartir evaluación</Text>
+      </TouchableOpacity>
     </View>
   );
 }
