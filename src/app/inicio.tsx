@@ -36,6 +36,13 @@ export default function Inicio() {
           <Text>Consultá tus próximos exámenes</Text>
         </TouchableOpacity>
       </Link>
+
+      <Link href="/historial" asChild>
+        <TouchableOpacity style={styles.tarjeta} activeOpacity={0.7}>
+          <Text style={styles.saludo}>Historial de notas</Text>
+          <Text>Consultá tus notas y devoluciones</Text>
+        </TouchableOpacity>
+      </Link>
     </View>
   );
 }

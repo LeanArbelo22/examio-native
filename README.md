@@ -31,7 +31,7 @@ Estas credenciales son solamente datos simulados para esta etapa del proyecto.
 Inicio y cierre de sesión con un alumno de prueba (datos mock, listo.)
 Agenda de próximas evaluaciones (datos mock. listo)
 Compartir los datos de una evaluación (listo)
-Historial de notas y devoluciones (datos mock)
+Historial de notas y devoluciones (datos mock, listo)
 Recordatorios de evaluaciones mediante notificaciones locales.
 Resumen del rendimiento académico: promedio y porcentaje de aprobación.
 
