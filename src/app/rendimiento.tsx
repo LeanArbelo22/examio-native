@@ -1,9 +1,30 @@
 import { notas } from "@/data/notas";
 import { borderRadius, fontSize, fontWeight, semanticColors, spacing, } from "@/styles/theme";
 import { useRouter } from "expo-router";
-import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, ScrollView, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
 
 export default function Rendimiento() {
+
+    const escalaPromedio = useRef(new Animated.Value(1)).current;
+
+    useEffect(() => {
+        const animacion = Animated.sequence([
+            Animated.spring(escalaPromedio, {
+                toValue: 1.8,
+                useNativeDriver: true,
+            }),
+            Animated.spring(escalaPromedio, {
+                toValue: 1,
+                useNativeDriver: true,
+            }),
+        ]);
+
+        animacion.start();
+
+        return () => animacion.stop();
+    }, [escalaPromedio]);
+
     const router = useRouter()
     let sumaNotas = 0
     let notasPromocion = 0
@@ -38,7 +59,15 @@ export default function Rendimiento() {
             <ScrollView contentContainerStyle={styles.lista}>
                 <View style={styles.resumen}>
                     <Text style={styles.etiqueta}>Promedio general</Text>
-                    <Text style={styles.promedio}>{promedio.toFixed(1)}</Text>
+
+                    <Animated.Text
+                        style={[
+                            styles.promedio,
+                            { transform: [{ scale: escalaPromedio }] },
+                        ]}
+                    >
+                        {promedio.toFixed(1)}
+                    </Animated.Text>
 
                     <Text style={styles.dato}>
                         Evaluaciones rendidas: {notas.length}

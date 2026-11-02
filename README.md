@@ -26,14 +26,21 @@ Cada evaluación permite compartir por texto la materia, el título, la fecha y 
 
 Estas credenciales son solamente datos simulados para esta etapa del proyecto.
 
-## Features previstas
+## Funcionalidades implementadas
 
-Inicio y cierre de sesión con un alumno de prueba (datos mock, listo.)
-Agenda de próximas evaluaciones (datos mock. listo)
-Compartir los datos de una evaluación (listo)
-Historial de notas y devoluciones (datos mock, listo)
-Recordatorios con fecha y hora elegidas por el usuario (local)
-Resumen del rendimiento académico (listo)
+- Inicio y cierre de sesión con un alumno de prueba (datos mock, listo.)
+
+- Agenda de próximas evaluaciones (datos mock. listo)
+
+- Compartir los datos de una evaluación (listo)
+
+- Historial de notas y devoluciones (datos mock, listo)
+
+- Recordatorios con fecha y hora elegidas por el usuario (local)
+
+- Resumen del rendimiento académico (listo)
+
+- Animaciones para Cards de evaluaciones y para el promedio (listo)
 
 ## Contenidos aplicados
 
@@ -53,8 +60,11 @@ Resumen del rendimiento académico (listo)
 - Navegación con Expo Router
 - Renderizado de evaluaciones a partir de un array
 - Validación de formularios
--Compartir texto con Share.share
--Manejo de errores con try/catch y Alert
+- Compartir texto con Share.share
+- Manejo de errores con try/catch y Alert
+- Animaciones con Animated, UseRef y UseEffect.
+- Selección de fecha y hora con DateTimePickerAndroid.
+- Recordatorios de memoria con Zustand, setInterval y Alert.
 
 ## Tecnologías utilizadas
 

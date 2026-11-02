@@ -61,7 +61,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: spacing[4],
   },
   saludo: {
-    color: semanticColors.text,
+    color: semanticColors.primary,
     fontSize: fontSize.titleSmall,
     fontWeight: fontWeight.bold,
   },
@@ -78,6 +78,13 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderRadius: borderRadius.card,
     padding: spacing[4],
+    paddingVertical: spacing[4] + spacing[2],
+    marginBottom: spacing[4],
     gap: spacing[2],
+  },
+  descripcion: {
+    color: semanticColors.textMuted,
+    fontSize: fontSize.bodySmall,
+    lineHeight: 22,
   },
 });

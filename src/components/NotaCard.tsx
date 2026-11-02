@@ -1,5 +1,6 @@
 import { borderRadius, fontSize, fontWeight, semanticColors, spacing, } from "@/styles/theme";
-import { StyleSheet, Text, View } from "react-native";
+import { useEffect, useRef } from "react";
+import { Animated, StyleSheet, Text } from "react-native";
 
 export default function NotaCard({
     materia,
@@ -14,14 +15,34 @@ export default function NotaCard({
     nota: number;
     devolucion: string;
 }) {
+
+    const escalaTarjeta = useRef(new Animated.Value(0)).current;
+
+    useEffect(() => {
+        const animacion = Animated.spring(escalaTarjeta, {
+            toValue: 1,
+            delay: 300,
+            useNativeDriver: true,
+        });
+
+        animacion.start();
+
+        return () => animacion.stop();
+    }, [escalaTarjeta]);
+
     return (
-        <View style={styles.card}>
+        <Animated.View
+            style={[
+                styles.card,
+                { transform: [{ scale: escalaTarjeta }] },
+            ]}
+        >
             <Text style={styles.materia}>{materia}</Text>
             <Text style={styles.titulo}>{titulo}</Text>
             <Text style={styles.detalle}>Fecha: {fecha}</Text>
             <Text style={styles.titulo}>Nota: {nota}</Text>
             <Text style={styles.detalle}>Devolución: {devolucion}</Text>
-        </View>
+        </Animated.View>
     )
 }
 

@@ -2,7 +2,8 @@ import {
   borderRadius, fontSize, fontWeight, semanticColors, spacing,
 } from "@/styles/theme";
 import { useRouter } from "expo-router";
-import { Alert, Share, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
+import { useEffect, useRef } from "react";
+import { Alert, Animated, Share, StyleSheet, Text, TouchableOpacity } from "react-native";
 
 export default function EvaluacionCard({
   id,
@@ -20,6 +21,20 @@ export default function EvaluacionCard({
 
   const router = useRouter();
 
+  const escalaTarjeta = useRef(new Animated.Value(0)).current;
+
+  useEffect(() => {
+    const animacion = Animated.spring(escalaTarjeta, {
+      toValue: 1,
+      delay: 300,
+      useNativeDriver: true,
+    });
+
+    animacion.start();
+
+    return () => animacion.stop();
+  }, [escalaTarjeta]);
+
   async function compartirEvaluacion() {
     try {
       await Share.share({
@@ -31,7 +46,12 @@ export default function EvaluacionCard({
   }
 
   return (
-    <View style={styles.card}>
+    <Animated.View
+      style={[
+        styles.card,
+        { transform: [{ scale: escalaTarjeta }] },
+      ]}
+    >
       <Text style={styles.materia}>{materia}</Text>
       <Text style={styles.titulo}>{titulo}</Text>
       <Text style={styles.detalle}>Fecha: {fecha}</Text>
@@ -53,7 +73,7 @@ export default function EvaluacionCard({
       >
         <Text style={styles.materia}>Crear recordatorio</Text>
       </TouchableOpacity>
-    </View>
+    </Animated.View>
   );
 }
 
