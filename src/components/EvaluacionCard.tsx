@@ -1,23 +1,24 @@
 import {
-  borderRadius,
-  fontSize,
-  fontWeight,
-  semanticColors,
-  spacing,
+  borderRadius, fontSize, fontWeight, semanticColors, spacing,
 } from "@/styles/theme";
+import { useRouter } from "expo-router";
 import { Alert, Share, StyleSheet, Text, TouchableOpacity, View, } from "react-native";
 
 export default function EvaluacionCard({
+  id,
   materia,
   titulo,
   fecha,
   horario,
 }: {
+  id: number
   materia: string;
   titulo: string;
   fecha: string;
   horario: string;
 }) {
+
+  const router = useRouter();
 
   async function compartirEvaluacion() {
     try {
@@ -28,6 +29,7 @@ export default function EvaluacionCard({
       Alert.alert("No se pudo compartir", "Intente nuevamente");
     }
   }
+
   return (
     <View style={styles.card}>
       <Text style={styles.materia}>{materia}</Text>
@@ -39,6 +41,17 @@ export default function EvaluacionCard({
         onPress={compartirEvaluacion}
       >
         <Text style={styles.materia}>Compartir evaluación</Text>
+      </TouchableOpacity>
+      <TouchableOpacity
+        activeOpacity={0.7}
+        onPress={() =>
+          router.push({
+            pathname: "/recordatorio",
+            params: { id },
+          })
+        }
+      >
+        <Text style={styles.materia}>Crear recordatorio</Text>
       </TouchableOpacity>
     </View>
   );

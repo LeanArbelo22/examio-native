@@ -15,6 +15,7 @@ export default function Evaluaciones() {
                 {evaluaciones.map((evaluacion) => (
                     <EvaluacionCard
                         key={evaluacion.id}
+                        id={evaluacion.id}
                         materia={evaluacion.materia}
                         titulo={evaluacion.titulo}
                         fecha={evaluacion.fecha}

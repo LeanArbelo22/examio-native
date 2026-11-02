@@ -1,3 +1,4 @@
+import AvisosRecordatorios from "@/components/AvisosRecordatorios";
 import { useAutenticacionStore } from "@/store/autenticacionStore";
 import { borderRadius, fontSize, fontWeight, semanticColors, spacing } from "@/styles/theme";
 import { Stack, useRouter } from "expo-router";
@@ -17,83 +18,84 @@ export default function RootLayout() {
   }
   return (
     <SafeAreaView style={styles.pantalla}>
-      <View style={styles.header}>
-        <Image
-          source={require("../../assets/images/logo.png")}
-          resizeMode="contain"
-          style={styles.logo}
-        />
-      </View>
-      {usuario !== null && (
-        <View style={styles.encabezado}>
-          <View>
-            <Text style={styles.saludo}>{usuario.nombre}</Text>
-            <Text style={styles.rol}>{usuario.rol}</Text>
-          </View>
-
-          <TouchableOpacity
-            style={styles.botonLogout}
-            activeOpacity={0.7}
-            onPress={manejarLogout}
-          >
-            <Text style={styles.textoLogout}>Cerrar sesión</Text>
-          </TouchableOpacity>
+        <AvisosRecordatorios />
+        <View style={styles.header}>
+          <Image
+            source={require("../../assets/images/logo.png")}
+            resizeMode="contain"
+            style={styles.logo}
+          />
         </View>
-      )}
-      <View style={styles.contenido}>
-        {/* headerShown evita mostrar el header por defecto de expo router */}
-        <Stack screenOptions={{ headerShown: false }} />
-      </View>
-    </SafeAreaView>
-  );
+        {usuario !== null && (
+          <View style={styles.encabezado}>
+            <View>
+              <Text style={styles.saludo}>{usuario.nombre}</Text>
+              <Text style={styles.rol}>{usuario.rol}</Text>
+            </View>
+
+            <TouchableOpacity
+              style={styles.botonLogout}
+              activeOpacity={0.7}
+              onPress={manejarLogout}
+            >
+              <Text style={styles.textoLogout}>Cerrar sesión</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+        <View style={styles.contenido}>
+          {/* headerShown evita mostrar el header por defecto de expo router */}
+          <Stack screenOptions={{ headerShown: false }} />
+        </View>
+      </SafeAreaView>
+      );
 }
 
-const styles = StyleSheet.create({
-  pantalla: {
-    flex: 1,
-    backgroundColor: semanticColors.screenBackground,
+      const styles = StyleSheet.create({
+        pantalla: {
+        flex: 1,
+      backgroundColor: semanticColors.screenBackground,
   },
-  header: {
-    alignItems: "center",
+      header: {
+        alignItems: "center",
   },
-  logo: {
-    width: 180,
-    height: 80,
+      logo: {
+        width: 180,
+      height: 80,
     //resizeMode: "contain", -- sale advertencia deprecado, se agrega como prop de image
   },
-  contenido: {
-    flex: 1,
+      contenido: {
+        flex: 1,
   },
 
-  encabezado: {
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    paddingHorizontal: spacing[4],
-    marginTop: spacing[4],
+      encabezado: {
+        flexDirection: "row",
+      alignItems: "center",
+      justifyContent: "space-between",
+      paddingHorizontal: spacing[4],
+      marginTop: spacing[4],
   },
-  saludo: {
-    color: semanticColors.text,
-    fontSize: fontSize.titleSmall,
-    fontWeight: fontWeight.bold,
+      saludo: {
+        color: semanticColors.text,
+      fontSize: fontSize.titleSmall,
+      fontWeight: fontWeight.bold,
   },
-  rol: {
-    color: semanticColors.textMuted,
-    fontSize: fontSize.bodySmall,
-    marginTop: spacing[1],
-    textTransform: "capitalize",
+      rol: {
+        color: semanticColors.textMuted,
+      fontSize: fontSize.bodySmall,
+      marginTop: spacing[1],
+      textTransform: "capitalize",
   },
-  botonLogout: {
-    backgroundColor: semanticColors.primarySoft,
-    borderColor: semanticColors.primaryBorder,
-    borderWidth: 1,
-    borderRadius: borderRadius.medium,
-    paddingHorizontal: spacing[3],
-    paddingVertical: spacing[2],
+      botonLogout: {
+        backgroundColor: semanticColors.primarySoft,
+      borderColor: semanticColors.primaryBorder,
+      borderWidth: 1,
+      borderRadius: borderRadius.medium,
+      paddingHorizontal: spacing[3],
+      paddingVertical: spacing[2],
   },
-  textoLogout: {
-    color: semanticColors.primary,
-    fontSize: fontSize.bodySmall,
-    fontWeight: fontWeight.semibold,
+      textoLogout: {
+        color: semanticColors.primary,
+      fontSize: fontSize.bodySmall,
+      fontWeight: fontWeight.semibold,
   },
 });

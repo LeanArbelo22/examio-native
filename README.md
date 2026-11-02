@@ -32,7 +32,7 @@ Inicio y cierre de sesión con un alumno de prueba (datos mock, listo.)
 Agenda de próximas evaluaciones (datos mock. listo)
 Compartir los datos de una evaluación (listo)
 Historial de notas y devoluciones (datos mock, listo)
-Recordatorios de evaluaciones mediante notificaciones locales.
+Recordatorios con fecha y hora elegidas por el usuario (local)
 Resumen del rendimiento académico (listo)
 
 ## Contenidos aplicados
